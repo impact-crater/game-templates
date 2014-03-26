@@ -1,4 +1,5 @@
-var impact = require('./impact-crater')(process.argv[2]);
+var path = require('path');
+var impact = require('./impact-crater')(path.dirname(process.argv[1]));
 /*
     impact.web -> The express web server. You can add additional paths if you want.
      impact.ig -> The impactjs namespace. If you are doing any database stuff attach the 
