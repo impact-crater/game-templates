@@ -75,13 +75,12 @@ module.exports = function(serverPath) {
     require(impactLibPath + '/impact/impact.js');
 
     // Setup the webserver
-    var express = require('express');
-    var http = require('http');
+    var express = require(root + '/node_modules/express');
     var app = express();
     app.enable("jsonp callback");
     var server = app.listen(config.port);
     // Setup the websockets
-    ig.io = require('socket.io').listen(server);
+    ig.io = require(root + '/node_modules/socket.io').listen(server);
     ig.io.set('log level', 1);
 
     // Setup the latency checking
